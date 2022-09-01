@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang=" ">
+<head>
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<h1 class="box" id="heading">My Contacts List</h1>
+<div class="box">
+    <% for( let i of contact_list) { %>
+        <div class="item">
+            <input type="checkbox">
+            <p><%= i.name %>&nbsp;&nbsp;&nbsp;<%= i.phone %></p>
+        </div>
+    <% } %>
+    <form class="item" action="/create-contact" method="post">
+        <input type="text" name="name" placeholder="Name" required autocomplete="off">
+        <input type="text" name="phone" placeholder="phone" required autocomplete="off">
+        <button type="submit" name="button">+</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>
